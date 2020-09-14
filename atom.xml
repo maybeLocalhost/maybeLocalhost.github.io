@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>flag2021</title>
+  <title>Localhost&#39;s Blog</title>
   
-  <subtitle>正在努力变得不是那么菜</subtitle>
+  <subtitle>Efforts create motivation.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
