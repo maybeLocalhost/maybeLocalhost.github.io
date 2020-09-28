@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-28T05:48:15.248Z</updated>
+  <updated>2020-09-28T06:09:49.748Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,17 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>software security/软件安全-基础知识</title>
+    <title>软件安全-基础知识</title>
     <link href="http://yoursite.com/2020/09/28/software%20security/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     <id>http://yoursite.com/2020/09/28/software%20security/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</id>
-    <published>2020-09-28T05:48:15.248Z</published>
-    <updated>2020-09-28T05:48:15.248Z</updated>
+    <published>2020-09-28T05:50:59.000Z</published>
+    <updated>2020-09-28T06:09:49.748Z</updated>
+    
+    <content type="html"><![CDATA[<p>处理器硬件架构 &amp; 反汇编 &amp; Windows 操作系统</p><a id="more"></a><h1 id="处理器硬件架构基础"><a href="#处理器硬件架构基础" class="headerlink" title="处理器硬件架构基础"></a>处理器硬件架构基础</h1><h2 id="CPU结构"><a href="#CPU结构" class="headerlink" title="CPU结构"></a>CPU结构</h2><p>CPU结构包括：寄存器、算术逻辑单元 (ALU)、控制器和内部总线</p><img src="软件安全-基础知识.assets/image-20200928135623887.png" alt="image-20200928135623887" style="zoom:80%;" /><ul><li>寄存器提供 CPU 的内部存储，用来暂时存放参与运算的数据及运算结果</li><li>算术逻辑单元执行计算机的运算功能</li><li>控制器控制计算机各部件工作，包括取指、译码、执行</li><li>内部总线将以上部分互连，提供通信机制</li></ul><h2 id="保护模式"><a href="#保护模式" class="headerlink" title="保护模式"></a>保护模式</h2><p>IA-32 架构 CPU 具有两种工作模式：实模式、保护模式</p><p>工作模式受 CR0 控制寄存器的 PE 标志位控制，CPU 刚开始初始化后工作在实模式下，PE 值为 0 ，</p><h2 id="特权级"><a href="#特权级" class="headerlink" title="特权级"></a>特权级</h2><h2 id="中断处理与异常处理"><a href="#中断处理与异常处理" class="headerlink" title="中断处理与异常处理"></a>中断处理与异常处理</h2><h2 id="调试支持"><a href="#调试支持" class="headerlink" title="调试支持"></a>调试支持</h2><h2 id="虚拟化支持"><a href="#虚拟化支持" class="headerlink" title="虚拟化支持"></a>虚拟化支持</h2><h1 id="反汇编及对抗技术"><a href="#反汇编及对抗技术" class="headerlink" title="反汇编及对抗技术"></a>反汇编及对抗技术</h1><h1 id="Windows-操作系统基础"><a href="#Windows-操作系统基础" class="headerlink" title="Windows 操作系统基础"></a>Windows 操作系统基础</h1>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;处理器硬件架构 &amp;amp; 反汇编 &amp;amp; Windows 操作系统&lt;/p&gt;
     
     </summary>
     
     
+      <category term="软件安全" scheme="http://yoursite.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="Software Security" scheme="http://yoursite.com/tags/Software-Security/"/>
     
   </entry>
   
