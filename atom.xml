@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Localhost&#39;s Blog</title>
+  
+  <subtitle>Efforts create motivation.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2021-10-01T15:13:59.060Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>maybeLocalhost</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Anaconda重装指南</title>
+    <link href="http://yoursite.com/2020/10/25/environment/Anaconda%E9%87%8D%E8%A3%85%E6%8C%87%E5%8D%97/"/>
+    <id>http://yoursite.com/2020/10/25/environment/Anaconda%E9%87%8D%E8%A3%85%E6%8C%87%E5%8D%97/</id>
+    <published>2020-10-25T14:49:16.000Z</published>
+    <updated>2021-10-01T15:13:59.060Z</updated>
+    
+    <content type="html"><![CDATA[<p>教练，我悟了！</p><a id="more"></a><p>PS. 全文均为win10环境下测试情况:clinking_glasses:</p><h1 id="彻底卸载Anaconda"><a href="#彻底卸载Anaconda" class="headerlink" title="彻底卸载Anaconda"></a>彻底卸载Anaconda</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install anaconda-clean</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">anaconda-clean --yes</span><br></pre></td></tr></table></figure><p>如果国内源装不上<code>anaconda-clean</code>的话，使用默认国外源试一下。</p><p>最后控制面板里卸载一下，最好清完重启一下，强迫症记得清一下没用的图标。</p><h1 id="Anaconda换源"><a href="#Anaconda换源" class="headerlink" title="Anaconda换源"></a>Anaconda换源</h1><p>参考：</p><p><a href="https://blog.csdn.net/observador/article/details/83618540" target="_blank" rel="noopener">https://blog.csdn.net/observador/article/details/83618540</a></p><p>Everything搜一下<code>.condarc</code>，修改其内容为下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssl_verify: true</span><br><span class="line">channels:</span><br><span class="line">  - https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br></pre></td></tr></table></figure><p>如果没有<code>.condarc</code>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --set show_channel_urls yes</span><br></pre></td></tr></table></figure><p>先执行该命令，生成文件后再添加。</p><p>换完源：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda update conda</span><br><span class="line">conda uodate --all</span><br></pre></td></tr></table></figure><h1 id="conda创建环境"><a href="#conda创建环境" class="headerlink" title="conda创建环境"></a>conda创建环境</h1><p>参考：</p><p><a href="https://blog.csdn.net/SARACH_WONG/article/details/89328307" target="_blank" rel="noopener">https://blog.csdn.net/SARACH_WONG/article/details/89328307</a></p><p><a href="https://www.jianshu.com/p/240e396e495f" target="_blank" rel="noopener">https://www.jianshu.com/p/240e396e495f</a></p><p>创建：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n 新环境名 python&#x3D;版本号</span><br></pre></td></tr></table></figure><p>激活：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">active 新环境名</span><br></pre></td></tr></table></figure><p>退出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure><p>删除：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n 环境名 --all</span><br></pre></td></tr></table></figure><p>管理包：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -n 环境名 包名</span><br></pre></td></tr></table></figure><p>查看所有环境：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure><p>查看活跃环境：带<code>*</code>为当前环境</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></table></figure><p>查看该环境下安装的包和版本：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;教练，我悟了！&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="environment" scheme="http://yoursite.com/categories/environment/"/>
+    
+    
+      <category term="Anaconda" scheme="http://yoursite.com/tags/Anaconda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟机配置流程</title>
+    <link href="http://yoursite.com/2020/10/15/environment/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/"/>
+    <id>http://yoursite.com/2020/10/15/environment/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/</id>
+    <published>2020-10-15T01:14:35.000Z</published>
+    <updated>2021-10-01T15:14:16.601Z</updated>
+    
+    <content type="html"><![CDATA[<p>配一遍忘一遍</p><a id="more"></a><h1 id="设置root用户"><a href="#设置root用户" class="headerlink" title="设置root用户"></a>设置root用户</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure><h1 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure><h1 id="安装vscode"><a href="#安装vscode" class="headerlink" title="安装vscode"></a>安装vscode</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i xxx.deb</span><br></pre></td></tr></table></figure><h1 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h1><ul><li><a href="https://blog.csdn.net/qq_41880069/article/details/82813885?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param" target="_blank" rel="noopener">https://blog.csdn.net/qq_41880069/article/details/82813885?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param</a></li></ul><ul><li><a href="https://blog.csdn.net/weixin_45619852/article/details/108883465" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45619852/article/details/108883465</a></li></ul><h1 id="忘密码"><a href="#忘密码" class="headerlink" title="忘密码"></a>忘密码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">passwd</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;配一遍忘一遍&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="environment" scheme="http://yoursite.com/categories/environment/"/>
+    
+    
+      <category term="VM Station" scheme="http://yoursite.com/tags/VM-Station/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一次CCF认证</title>
+    <link href="http://yoursite.com/2020/09/14/review/%E7%AC%AC%E4%B8%80%E6%AC%A1CCF%E8%AE%A4%E8%AF%81/"/>
+    <id>http://yoursite.com/2020/09/14/review/%E7%AC%AC%E4%B8%80%E6%AC%A1CCF%E8%AE%A4%E8%AF%81/</id>
+    <published>2020-09-14T15:03:49.000Z</published>
+    <updated>2021-10-01T15:15:54.573Z</updated>
+    
+    <content type="html"><![CDATA[<p>还是太菜辽</p><a id="more"></a><h1 id="关于CCF认证"><a href="#关于CCF认证" class="headerlink" title="关于CCF认证"></a>关于CCF认证</h1><p>大二的时候了解到这个认证，但当时还是玩心太大了，也没怎么准备。果不其然，现在流的泪都是大一大二脑子进的水。八月末回家后开始看算法笔记，刷了几道题，一开始也没想着拿太高的分，本着先熟悉一下的想法报了这个认证。</p><h1 id="认证过程"><a href="#认证过程" class="headerlink" title="认证过程"></a>认证过程</h1><p><del>考试那天中午有点紧张，甚至有种回到高考的感觉</del></p><p>现在 CCF 认证好像已经支持 C++14 了，一开始我看到一个语言选项结尾是 11 就选了往上交，一直 CE，我就一遍遍的改，一遍遍的 CE，结果人家是 C 11 (枯)。最后还是改回了第一次的代码交了上去。</p><p>此时，再加上刚开始脑子空白的时间，已经过去四十多分钟了，但第一题测试点没跑全，我寻思等会儿再来看，就先去写了第二题。第二题因为在一个 for 循环中用过的变量再次使用时，没有进行初始化，WA++，虽然最后也过了，但是浪费了太多时间在数据测试找错上。</p><p>第三题，本来应该是可以搞出来的，结果对 STL 使用熟练度还不够，最后也没有AC。</p><p>第四题、第五题，我还是太菜辽，用题目给的样例骗分失败，还不如老老实实回去改第一题。</p><h1 id="事后总结"><a href="#事后总结" class="headerlink" title="事后总结"></a>事后总结</h1><ul><li>考试前不要太紧张</li><li>把基础好好巩固一下</li><li>STL 的使用还要多练</li><li>多刷题，多试着自己写</li><li>考试时，改代码的时候复制一份再改</li><li>多提交，一般可提交34次，万一就能得点分呢</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;还是太菜辽&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="review" scheme="http://yoursite.com/categories/review/"/>
+    
+    
+      <category term="CCF-CSP" scheme="http://yoursite.com/tags/CCF-CSP/"/>
+    
+  </entry>
+  
+</feed>
